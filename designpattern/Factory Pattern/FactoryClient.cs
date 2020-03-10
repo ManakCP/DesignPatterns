@@ -6,7 +6,9 @@ class FactoryClient
     {
         //CREATION - FACTORY PATTERN
         /*
-        * Ref - https://refactoring.guru/design-patterns/factory-method
+        * Learning Reference
+        * https://refactoring.guru/design-patterns/factory-method
+        * https://www.javatpoint.com/factory-method-design-pattern
         */
         Console.WriteLine("CREATION - FACTORY PATTERN");
         Console.WriteLine(">> With user input");
@@ -15,9 +17,8 @@ class FactoryClient
         * based on Type of Creator send as parameter
         */
         InvoiceCreater invoice = new InvoiceCreater();
-        invoice.GetInvoice(invoiceType: "withheader");
-        invoice.GetInvoice(invoiceType: "withoutheader");
-        invoice.GetInvoice(invoiceType: "invalid");
+        invoice.GetInvoice(invoiceType: EnumInvoiceType.WithHeader);
+        invoice.GetInvoice(invoiceType: EnumInvoiceType.WithOutHeader);
 
         Console.WriteLine(Environment.NewLine + ">> WithOut user input");
         /* 
@@ -25,9 +26,9 @@ class FactoryClient
         * based on Type of Creator created
         */
         AInvoiceCreater invoiceCreater;
-        invoiceCreater = new InvoiceWithHeaderCreater();
+        invoiceCreater = new InvoiceWithHeader();
         invoiceCreater.PerformAction();
-        invoiceCreater = new InvoiceWithoutHeaderCreater();
+        invoiceCreater = new InvoiceWithoutHeader();
         invoiceCreater.PerformAction();
         /*
         * New type of Invoice can be added later by just 

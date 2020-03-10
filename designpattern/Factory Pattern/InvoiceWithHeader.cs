@@ -1,8 +1,8 @@
 using System;
 
-class InvoiceWithHeader : IInvoice
+class InvoiceWithHeader : AInvoiceCreater
 {
-    public void Print()
+    internal override void Print()
     {
         Console.WriteLine("Invoice with header!!");
     }

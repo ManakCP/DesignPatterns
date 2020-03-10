@@ -9,6 +9,8 @@ namespace DesignPattern
             Console.WriteLine("Design Patterns !!");
             //CREATION - FACTORY PATTERN
             new FactoryClient().Main();
+            //CREATION - ABSTRACT FACTORY PATTERN
+            new AbstractFactoryClient().Main();
             
         }
     }

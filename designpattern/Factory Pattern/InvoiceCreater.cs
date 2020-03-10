@@ -3,20 +3,17 @@ using System;
 class InvoiceCreater
 {
     AInvoiceCreater aInvoiceCreater;
-    internal void GetInvoice(string invoiceType)
+    internal void GetInvoice(EnumInvoiceType invoiceType)
     {
-        if (invoiceType.ToLower() == "withheader")
+        if (invoiceType == EnumInvoiceType.WithHeader)
         {
-            aInvoiceCreater = new InvoiceWithHeaderCreater();
-            aInvoiceCreater.PerformAction();
-        }else if (invoiceType.ToLower() == "withoutheader")
-        {
-            aInvoiceCreater = new InvoiceWithoutHeaderCreater();
+            aInvoiceCreater = new InvoiceWithHeader();
             aInvoiceCreater.PerformAction();
         }
-        else
+        else if (invoiceType == EnumInvoiceType.WithOutHeader)
         {
-            Console.WriteLine("Invalid Input");
+            aInvoiceCreater = new InvoiceWithoutHeader();
+            aInvoiceCreater.PerformAction();
         }
     }
 }

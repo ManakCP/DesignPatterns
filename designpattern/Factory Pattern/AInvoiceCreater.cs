@@ -1,10 +1,9 @@
 abstract class AInvoiceCreater
 {
-    public abstract IInvoice FactoryMethod();
+    internal abstract void Print();
 
     public void PerformAction()
     {
-        IInvoice invoice = FactoryMethod();
-        invoice.Print();
+        this.Print();
     }
 }

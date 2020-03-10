@@ -1,0 +1,5 @@
+enum EnumInvoiceType
+{
+    WithHeader,
+    WithOutHeader
+}
