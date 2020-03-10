@@ -4,6 +4,6 @@ class InvoiceWithHeader : AInvoiceCreater
 {
     internal override void Print()
     {
-        Console.WriteLine("Invoice with header!!");
+        this.subject = "Invoice with header!!";
     }
 }

@@ -4,6 +4,6 @@ class InvoiceWithoutHeader : AInvoiceCreater
 { 
     internal override void Print()
     {
-        Console.WriteLine("Invoice with out header!!");
+        this.subject = "Invoice with out header!!";       
     }
 }
